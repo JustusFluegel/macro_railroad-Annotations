@@ -95,6 +95,7 @@ pub fn generate_railroad(
         attrs.insert(
             macro_pos,
             parse_quote! {
+                #[doc = " "]
                 #[doc = #image_ref]
             },
         )
