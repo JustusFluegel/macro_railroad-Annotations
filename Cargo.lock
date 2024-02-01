@@ -50,7 +50,7 @@ dependencies = [
 
 [[package]]
 name = "macro_railroad_annotation"
-version = "1.0.0"
+version = "1.0.2"
 dependencies = [
  "base64",
  "macro_railroad",
