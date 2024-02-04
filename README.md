@@ -2,17 +2,17 @@
 Annotation macro to generate railroads for macro_rules! and embed them in the documentation
 
 ## Usage
-````rs
+```rs
 /// This is some documentation for the macro below
-#![macro_railroad_annotation::generate_railroad]
+#[macro_railroad_annotation::generate_railroad]
 /// # Examples
-/// ```ignore
+/// ````ignore
 /// foo!(5 + 5);
-/// ```
+/// ````
 macro_rules! foo {
   ($tok:expr) => {};
 }
-````
+```
 
 Be aware that this only positions the graphic correctly on nightly compilers (which includes docs.rs).
 If on stable the graphic will just be positioned at the top of the doc comments.
@@ -24,18 +24,18 @@ _Here would be a railroad diagram of the macro [`macro_name`]_
 ```
 
 Alternatively, you can position the image manually and specify your own alt text, which works on all versions:
-````rs
+```rs
 /// This is some documentation for the macro below
 /// ![alt text][ref_string]
 /// # Examples
-/// ```ignore
+/// ````ignore
 /// foo!(5 + 5);
-/// ```
-#![macro_railroad_annotation::generate_railroad("ref_string")]
+/// ````
+#[macro_railroad_annotation::generate_railroad("ref_string")]
 macro_rules! foo {
   ($tok:expr) => {};
 }
-````
+```
 
 # Credits
 This macro uses the excellent [`macro_railroad`](https://crates.io/crates/macro_railroad) crate to generate the diagrams, and is only a slim wrapper around it.
