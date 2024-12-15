@@ -47,7 +47,7 @@ pub fn generate_railroad(
     tree.normalize();
     let mut diagram = diagram::into_diagram(tree, true);
     diagram.add_default_css();
-    diagram::add_default_css(&mut diagram);
+    diagram::add_default_css(&mut diagram, &macro_railroad::railroad::Stylesheet::Light);
 
     let svg_string = diagram.to_string();
 
