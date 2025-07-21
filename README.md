@@ -37,5 +37,7 @@ macro_rules! foo {
 }
 ```
 
+The argument to the macro specifies a label the image is inserted for, so you can use any normal markdown image with the url set to the label to position it anywhere you want.
+
 # Credits
 This macro uses the excellent [`macro_railroad`](https://crates.io/crates/macro_railroad) crate to generate the diagrams, and is only a slim wrapper around it.

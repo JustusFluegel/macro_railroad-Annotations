@@ -1,7 +1,7 @@
 [package]
 name = "macro_railroad_annotation"
 description = "Easily embed macro_railroad images in your docs using this attribute macro!"
-version = "1.0.4"
+version = "1.1.0"
 authors = ["Justus Flügel <justusfluegel@gmail.com>"]
 repository = "https://github.com/JustusFluegel/macro_railroad-Annotations"
 keywords = ["macro_railroad", "documentation", "docsrs", "decl_macros", "macros"]
@@ -17,7 +17,7 @@ proc-macro = true
 base64 = "0.22.1"
 macro_railroad = "0.1.7"
 manyhow = "0.11.4"
-proc-macro2 = { version = "1.0.92", features = ["span-locations"] }
-quote = "1.0.37"
-rand = "0.8.5"
-syn = { version = "2.0.90", features = ["full"] }
+proc-macro2 = { version = "1.0.95", features = ["span-locations"] }
+quote = "1.0.40"
+rand = "0.9.2"
+syn = { version = "2.0.104", features = ["full"] }

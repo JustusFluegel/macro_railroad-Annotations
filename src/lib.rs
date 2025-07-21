@@ -4,7 +4,7 @@ use base64::{engine::general_purpose::STANDARD as engine, Engine};
 use macro_railroad::{diagram, lowering, parser};
 use proc_macro2::Span;
 use quote::ToTokens;
-use rand::distributions::{Alphanumeric, DistString};
+use rand::distr::{Alphanumeric, SampleString};
 use syn::{parse_quote, spanned::Spanned, AttrStyle, LitStr, Meta};
 
 /// Annotate a `macro_rules!` statement with this macro to include a diagram of the
@@ -56,7 +56,7 @@ pub fn generate_railroad(
     let given_label = attr.is_some();
     let label = attr
         .map(|lit| lit.value())
-        .unwrap_or_else(|| Alphanumeric.sample_string(&mut rand::thread_rng(), 16));
+        .unwrap_or_else(|| Alphanumeric.sample_string(&mut rand::rng(), 16));
 
     let doc_string = LitStr::new(
         &format!("\n \n  [{label}]: data:image/svg+xml;base64,{encoded}"),
